@@ -1,9 +1,0 @@
-{
-  "manifest_version": 3,
-  "name": "CDP Multi-client Reproduction",
-  "version": "1.0.0",
-  "permissions": ["debugger"],
-  "background": { "service_worker": "background.js" },
-  "devtools_page": "devtools.html",
-  "minimum_chrome_version": "129"
-}

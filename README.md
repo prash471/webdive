@@ -59,7 +59,3 @@ Run the deterministic correlation tests with `npm test`.
 - [`methodology.html`](./methodology.html) is the complete technical computation guide.
 
 All website assets are relative and self-contained: there are no external fonts, analytics scripts, build tools, or backend calls. To host on GitHub Pages, publish the repository root from a branch in **Repository settings → Pages**. The root `index.html` becomes the site homepage.
-
-## Multi-client reproduction
-
-The [`repro`](./repro) directory is a separate minimal extension for testing DevTools and `chrome.debugger` coexistence. It attaches while its own DevTools panel remains visible, runs `Network.enable`, precise Coverage, CPU Profiler, and Tracing commands one at a time, then prints every command result, detach event, and collected event count. Load that directory separately as an unpacked extension when diagnosing a Chrome-version-specific conflict.
