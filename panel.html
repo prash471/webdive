@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WebDive</title>
+  <link rel="stylesheet" href="panel.css">
+  <link rel="stylesheet" href="detail.css">
+  <link rel="stylesheet" href="phase.css">
+  <style>.progress-copy{display:flex;justify-content:space-between;gap:16px;margin-bottom:7px}.progress-copy b{color:var(--accent)}.progress-track{height:7px;overflow:hidden;border-radius:999px;background:#5b7cfa18}.progress-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#5b7cfa,#8b5cf6);transition:width .22s ease}.drag-hint{font-size:11px}#resource-table thead tr:first-child th{cursor:grab}#resource-table thead tr:first-child th:active{cursor:grabbing}#resource-table th.dragging{opacity:.35}#resource-table th.drop-target{box-shadow:inset 3px 0 var(--accent)}#resource-table th:first-child,#resource-table td:first-child{position:sticky;left:0;background:Canvas;box-shadow:5px 0 9px -8px #0008}#resource-table tbody tr:nth-child(even) td:first-child{background:color-mix(in srgb,Canvas 98%,#76819b 2%)}#resource-table tbody tr:hover td:first-child{background:color-mix(in srgb,Canvas 94%,var(--accent) 6%)}#resource-table thead tr:first-child th:first-child{z-index:8}#resource-table .filter-row th:first-child{z-index:7}</style>
+</head>
+<body>
+  <main>
+    <header>
+      <div><div class="brand-line"><h1><span class="brand-mark" aria-hidden="true">W</span>WebDive</h1><a class="docs-link" href="methodology.html" target="_blank">Methodology &amp; metric guide</a></div><p>Local journey efficiency profiler</p></div>
+      <div class="controls">
+        <input id="name" aria-label="Recording name" value="dashboard workflow">
+        <select id="cpu" aria-label="CPU slowdown"><option value="1">CPU: No slowdown</option><option value="4">CPU: 4× slowdown</option><option value="6">CPU: 6× slowdown</option></select>
+        <select id="network" aria-label="Network slowdown"><option value="none">Network: No throttling</option><option value="fast3g">Network: Fast 3G</option><option value="slow3g">Network: Slow 3G</option></select>
+        <select id="coverage" aria-label="JavaScript coverage detail" title="Stable tracks executed and unused functions. Detailed adds block-level coverage but may crash Chrome on very large applications."><option value="function">Coverage: Stable</option><option value="detailed">Coverage: Detailed (large pages may crash)</option></select>
+        <button id="start">Start</button>
+        <button id="stop" disabled>Stop</button>
+      </div>
+    </header>
+    <section class="phase-controls" aria-label="Journey phase markers"><strong>Journey phase</strong><input id="phase-name" placeholder="e.g. Open checkout" aria-label="New journey phase name" disabled><button id="mark-phase" class="secondary" disabled title="Start a named phase at the current recording time">Mark phase</button><span id="phase-count">Start recording to add phase boundaries.</span></section>
+    <section class="quick-actions" aria-label="Recording quick actions"><strong>Quick actions</strong><button id="quick-reload" title="Start recording, reload the inspected page, and stop after load plus 1.5 seconds of network quiet"><span aria-hidden="true">↻</span> Reload &amp; auto-record</button><button id="quick-reload-clean" class="secondary" title="Reload and auto-record while bypassing the browser cache"><span aria-hidden="true">↻</span> Reload without cache</button><button id="clear-report" class="secondary" title="Clear the report currently shown; saved history is not deleted"><span aria-hidden="true">⊘</span> Clear view</button></section>
+    <section class="history-bar"><strong>Run history</strong><select id="history" aria-label="Saved recordings"><option value="">No saved recordings yet</option></select><button id="history-load" class="secondary" disabled>Load</button><button id="history-export" class="secondary" disabled>Export backup</button><button id="history-import" class="secondary">Import backup</button><input id="history-file" type="file" accept="application/json,.json" hidden><button id="history-delete" class="secondary" disabled>Delete</button></section>
+    <div id="notice">Ready. Recording reads page URLs, resource source, network timing, code coverage, and performance data for the inspected tab. Processing and history stay on this device. Start manually or use a reload quick action.</div>
+    <section id="report" hidden></section>
+    <details><summary>Raw normalized JSON</summary><button id="download" disabled>Download JSON</button><pre id="raw"></pre></details>
+  </main>
+  <dialog id="file-detail"><div class="detail-shell"><div class="detail-head"><div><span class="eyebrow">Resource analysis</span><h2 id="detail-title"></h2><p id="detail-url"></p></div><button id="detail-close" class="secondary" aria-label="Close file details">Close</button></div><div id="detail-body"></div></div></dialog>
+  <script type="module" src="panel.js"></script>
+</body>
+</html>

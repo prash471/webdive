@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280" role="img" aria-labelledby="title desc">
+  <title id="title">WebDive promotional tile</title>
+  <desc id="desc">WebDive logo with the line See what your web app really costs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#25324a"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbbf24"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+  </defs>
+  <rect width="440" height="280" rx="0" fill="url(#bg)"/>
+  <circle cx="386" cy="44" r="98" fill="#5b6dff" opacity=".12"/>
+  <path fill="url(#accent)" d="M42 43h68L98 106H54z"/>
+  <path fill="#172033" d="M57 58h10l5 28 6-20h8l5 20 6-28h10L97 97H86l-4-16-4 16H67z"/>
+  <text x="126" y="87" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700">WebDive</text>
+  <text x="42" y="151" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700">See what your web app</text>
+  <text x="42" y="184" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700">really costs.</text>
+  <text x="42" y="230" fill="#b9c2d3" font-family="Arial, Helvetica, sans-serif" font-size="14">Journey performance evidence, locally in DevTools.</text>
+</svg>

@@ -1,0 +1,21 @@
+.store-button {
+  margin-top: 18px;
+  background: var(--navy);
+  color: #fff;
+}
+
+.release-note {
+  align-self: center;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--amber);
+  background: #fff;
+}
+
+.release-note strong {
+  font-size: 18px;
+}
+
+.release-note p {
+  color: var(--muted);
+}
