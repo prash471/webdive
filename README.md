@@ -1,17 +1,27 @@
-# WebDive Journey Analyzer — CDP pipeline milestone
+# WebDive — Journey Performance Analyzer
 
 WebDive is a local-only Chrome DevTools extension. It correlates network requests, precise JavaScript/CSS coverage, a CPU profile, and Chrome performance trace events.
 
-## Try it
+## Installation
 
-For Chrome Web Store distribution, upload [`dist/webdive-0.5.0.zip`](./dist/webdive-0.5.0.zip) in the Chrome Web Store Developer Dashboard. Store copy and the permission justification are in [`store/listing.md`](./store/listing.md); the remaining account and review steps are in [`store/submission-checklist.md`](./store/submission-checklist.md). The public privacy policy is [`privacy.html`](./privacy.html).
+### Chrome Web Store
 
-For local development:
+The WebDive listing is currently being prepared for Chrome Web Store review. Once it is approved, this section will link directly to the listing and Chrome will manage installation and updates.
 
-1. Open `chrome://extensions`, enable **Developer mode**, and choose **Load unpacked**.
-2. Select this directory.
-3. Open DevTools on a page and select the **WebDive** panel.
-4. Press **Start**, perform the journey, then press **Stop**.
+### Local development
+
+Use unpacked installation only when developing or testing WebDive from source:
+
+1. Clone or download this repository.
+2. Open `chrome://extensions` in Chrome.
+3. Enable **Developer mode**.
+4. Choose **Load unpacked** and select the repository root—the directory containing [`manifest.json`](./manifest.json). Do not select the `dist` directory or the ZIP file.
+5. Open DevTools on a normal web page and select the **WebDive** panel.
+6. Press **Start**, perform the journey, then press **Stop**.
+
+The `dist` directory contains packaged release ZIP files for Chrome Web Store maintainers. End users and local contributors do not load that directory into Chrome.
+
+## Using WebDive
 
 For a page-load measurement, use **Reload & auto-record**. WebDive starts every profiling domain before reloading, then automatically stops after the load event and 1.5 seconds of Network-domain quiet (minimum 2 seconds, maximum 60 seconds). **Reload without cache** repeats the workflow with DevTools cache bypass enabled. Manual Stop remains available throughout.
 
