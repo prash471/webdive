@@ -6,7 +6,7 @@ WebDive is a local-only Chrome DevTools extension. It correlates network request
 
 ### Chrome Web Store
 
-The WebDive listing is currently being prepared for Chrome Web Store review. Once it is approved, this section will link directly to the listing and Chrome will manage installation and updates.
+[Install WebDive from the Chrome Web Store](https://chromewebstore.google.com/detail/webdive-journey-analyzer/labanghiblleihilkghoankklokbbhac). Chrome manages installation and automatic updates.
 
 ### Local development
 
